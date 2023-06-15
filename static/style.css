@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: auto;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+h2 {
+    color: #1a1a1a;
+    text-align: center;
+    font-size: 24px;
+    padding: 10px 0;
+}
+
+input[type=text] {
+    width: 60%;  /* Increase the input field width */
+    padding: 10px;  /* Increase the padding for better visibility */
+    font-size: 20px;  /* Increase the font size */
+}
+
+input[type=submit] {
+    width: 200px;  /* Decrease the width of quit button */
+    height: 45px;  /* Decrease the height of quit button */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 22px;  /* Increase the font size of quit text */
+    margin: 5px;
+    transition: background 0.3s ease-in-out;
+    color: white;
+}
+
+#quit {
+    background-color: #800000;  /* Dark red background */
+    width: 140px;  /* Made quit button smaller than get joke button */
+    height: 40px;  /* Made quit button smaller than get joke button */
+    font-size: 18px;  /* Made quit button text larger */
+}
+
+
+#quit:hover {
+    background-color: #b30000;  /* Brighter red on hover */
+}
+
+#get-joke {
+    background-color: #000;  /* Black background */
+}
+
+#get-joke:hover {
+    background-color: #444;  /* Dark grey on hover */
+}
+
+input[type=radio] {
+    display: none;
+}
+
+label {
+    display: block;
+    margin: 20px 0;
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+    background-color: #6c757d;
+    color: #100d0d;
+}
+
+input[type=radio]:checked + label {
+    background-color: #495057;
+}
+
+#joke {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}

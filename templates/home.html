@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the joke bot! Please enter your name:</h2>
+        <form action="/" method="post">
+            <input type="text" id="name" name="name" required>
+            <input type="submit" id="get-joke" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

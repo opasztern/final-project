@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <!--Linking the CSS stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!--Trying JavaScript to enable text to speech.  -->
+    <script>
+        // A function uses the Web Speech API to read out loud the joke
+        function readJoke(joke) {
+            // Create a new SpeechSynthesisUtterance instance
+            const msg = new SpeechSynthesisUtterance(joke);
+            // Use the speechSynthesis interface to read the joke out loud
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+</head>
+<body>
+    <!-- Div container for CSS styling -->
+    <div class="container">
+        <!-- Display the welcome message -->
+        <h2>Hello {{ name }}, please choose a joke category:</h2>
+        <!-- Form for selecting the joke category -->
+        <form action="/joke" method="post">
+            <!-- Hidden input to carry forward the name -->
+            <input type="hidden" name="name" value="{{ name }}">
+            <!-- Radio buttons for choosing joke category -->
+            <input type="radio" id="knock" name="category" value="knock knock">
+            <label for="knock">Knock-knock jokes</label><br>
+            <input type="radio" id="dad" name="category" value="dad">
+            <label for="dad">Dad jokes</label><br>
+            <input type="radio" id="programming" name="category" value="programming">
+            <label for="programming">Programming jokes</label><br>
+            <!-- Button for getting the joke -->
+            <input type="submit" id="get-joke" value="Get joke">
+        </form>
+        <!-- If there is a joke to display, show it -->
+        {% if joke %}
+            <!-- Paragraph to display the joke -->
+            <p id="joke">{{ joke }}</p>
+            <!-- Button to read the joke out loud -->
+            <button onclick="readJoke('{{ joke }}')">Read Joke Out Loud</button>
+        {% endif %}
+        <!-- Form for quitting -->
+        <form action="/thanks" method="post">
+            <!-- Hidden input to carry forward the name -->
+            <input type="hidden" name="name" value="{{ name }}">
+            <!-- Button to quit -->
+            <button type="submit" id="quit">Quit</button>
+        </form>
+    </div>
+</body>
+</html>

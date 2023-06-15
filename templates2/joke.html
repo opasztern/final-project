@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function readJoke(joke) {
+            const msg = new SpeechSynthesisUtterance(joke);
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Hello {{ name }}, please choose a joke category:</h2>
+        <form action="/joke" method="post">
+            <input type="hidden" name="name" value="{{ name }}">
+            <input type="radio" id="knock" name="category" value="knock knock">
+            <label for="knock">Knock-knock jokes</label><br>
+            <input type="radio" id="dad" name="category" value="dad">
+            <label for="dad">Dad jokes</label><br>
+            <input type="radio" id="programming" name="category" value="programming">
+            <label for="programming">Programming jokes</label><br>
+            <input type="submit" id="get-joke" value="Get joke">
+        </form>
+        {% if joke %}
+            <p id="joke">{{ joke }}</p>
+            <button onclick="readJoke('{{ joke }}')">Read Joke Out Loud</button>
+        {% endif %}
+        <form action="/thanks" method="post">
+            <input type="hidden" name="name" value="{{ name }}">
+            <button type="submit" id="quit">Quit</button>
+        </form>
+    </div>
+</body>
+</html>
