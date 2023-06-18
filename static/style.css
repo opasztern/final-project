@@ -31,41 +31,41 @@ h2 {
 }
 
 input[type=text] {
-    width: 60%;  /* Increase the input field width */
-    padding: 10px;  /* Increase the padding for better visibility */
-    font-size: 20px;  /* Increase the font size */
+    width: 60%;  
+    padding: 10px;  
+    font-size: 20px;  
 }
 
-input[type=submit] {
-    width: 200px;  /* Decrease the width of quit button */
-    height: 45px;  /* Decrease the height of quit button */
+#input[type=submit] {
+    width: 200px;  
+    height: 45px;  
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 22px;  /* Increase the font size of quit text */
+    font-size: 22px;  
     margin: 5px;
     transition: background 0.3s ease-in-out;
     color: white;
 }
 
 #quit {
-    background-color: #800000;  /* Dark red background */
-    width: 140px;  /* Made quit button smaller than get joke button */
-    height: 40px;  /* Made quit button smaller than get joke button */
-    font-size: 18px;  /* Made quit button text larger */
+    background-color: #800000;  
+    width: 140px;  
+    height: 40px; 
+    font-size: 18px;  
 }
 
 
-#quit:hover {
-    background-color: #b30000;  /* Brighter red on hover */
+quit:hover {
+    background-color: #b30000; 
 }
 
 #get-joke {
-    background-color: #000;  /* Black background */
+    background-color: #000;  
 }
 
 #get-joke:hover {
-    background-color: #444;  /* Dark grey on hover */
+    background-color: #444;  
 }
 
 input[type=radio] {
