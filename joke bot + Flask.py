@@ -23,12 +23,13 @@ def home():
         # redirect to joke page
         return redirect(url_for('joke', name=request.form.get('name')))
     # otherwise render home.html
-    return render_template('home.html')
+    else:
+        return render_template('home.html')
 
 @app.route('/joke', methods=['GET', 'POST'])
 def joke():
-    # get name from form submission, if not present then it's an empty string
-    name = request.args.get('name', "")
+    # get name from form submission
+    name = request.args.get('name')
     # prepare an empty string for joke
     joke = ""
     # If method is POST, means the form on joke.html is submitted
