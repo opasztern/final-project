@@ -15,10 +15,11 @@ knock_jokes_list = read_jokes_from_file("C:\\Users\\pinsa\\Desktop\\IT\\ReDI\\Py
 dad_jokes_list = read_jokes_from_file("C:\\Users\\pinsa\\Desktop\\IT\\ReDI\\Python Foundation s23\\final project\\dad_jokes.txt")
 programming_jokes_list = read_jokes_from_file("C:\\Users\\pinsa\\Desktop\\IT\\ReDI\\Python Foundation s23\\final project\\programming_jokes.txt")
 
-# The route() decorator tells Flask what URL should trigger our function
+# The route() decorator tells Flask what URL should trigger our function. 
+# in this case it's the localhost server on my machine(on port 5000). It's a Flask default.
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    # If method is POST, means the form on home.html is submitted
+    # method "GET" means visiting the web page. method "POST" means the form on home.html is submitted
     if request.method == 'POST':
         # redirect to joke page
         return redirect(url_for('joke', name=request.form.get('name')))
@@ -71,5 +72,6 @@ def thanks():
     return render_template('thanks.html')
 
 # If this script is run directly (rather than being imported), start the server
+# show detailed error messages when error accures (debug)
 if __name__ == '__main__':
     app.run(debug=True)
